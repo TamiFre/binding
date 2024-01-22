@@ -5,17 +5,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <StackLayout>
         <Label
-            BindingContext="{x:Reference FontSizeSlider}"
-            FontSize="{Binding Value}"
+            x:Name="label"
+            BindingContext="{x:Reference OpacitySlider}"
+            FontSize="40"
             HorizontalOptions="Center"
+            Opacity="{Binding Value}"
             Text="שלום יא2" />
+
+        <Button
+            x:Name="btn1"
+            BindingContext="{x:Reference HeightSlider}"
+            HeightRequest="{Binding Value}"
+            Text="lala" />
+
+
         <Slider
-            x:Name="FontSizeSlider"
+            x:Name="HeightSlider"
+            BindingContext="{x:Reference btn1}"
             Maximum="60"
-            Minimum="10" />
+            Minimum="1"
+            Value="{Binding Source={x:Reference btn1}, Path=HeightRequest}" />
+
+
         <Slider
-            x:Name="RotationSlider"
-            Maximum="360"
+            x:Name="OpacitySlider"
+            Maximum="1"
             Minimum="0" />
 
 
