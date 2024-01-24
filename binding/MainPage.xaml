@@ -2,9 +2,11 @@
 <ContentPage
     x:Class="binding.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <StackLayout>
-        <Label
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:binding.Models"
+    x:DataType="Models:Student">
+    <StackLayout HorizontalOptions="Center">
+        <!--<Label
             x:Name="label"
             BindingContext="{x:Reference OpacitySlider}"
             FontSize="40"
@@ -30,7 +32,12 @@
         <Slider
             x:Name="OpacitySlider"
             Maximum="1"
-            Minimum="0" />
+            Minimum="0" />-->
+        <Label Text="{Binding Name}" />
+        <Label Text="{Binding Age}" />
+
+        <Button Clicked="ChangeName" Text="Change name to Ziv" />
+
 
 
     </StackLayout>
